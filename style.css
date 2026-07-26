@@ -91,15 +91,15 @@ margin-bottom:35px;
 }
 
 button{
-padding:15px 35px;
+padding:18px 40px;
 border:none;
-border-radius:10px;
+border-radius:50px;
 background:#FFD700;
-color:#111;
+color:#000;
 font-size:18px;
 font-weight:bold;
 cursor:pointer;
-transition:.3s;
+transition:.4s;
 }
 
 button:hover{
