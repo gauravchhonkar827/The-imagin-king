@@ -183,6 +183,15 @@ text-align:center;
 background:#111827;
 margin-top:60px;
 }
+  padding:18px 40px;
+border:none;
+border-radius:50px;
+background:#FFD700;
+color:#000;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+transition:.4s;
 .hero p{
 font-size:17px;
 }
