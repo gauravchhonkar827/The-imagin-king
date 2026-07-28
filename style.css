@@ -249,3 +249,11 @@ opacity:.9;
   75%  { transform: translateX(-300%); }
   100% { transform: translateX(0%); }
 }
+.donation-qr {
+  text-align: right;
+}
+
+.donation-qr img {
+  margin-left: auto;
+  display: block;
+}
