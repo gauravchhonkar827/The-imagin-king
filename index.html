@@ -65,26 +65,136 @@ you'll get rewarded.
 <section id="future" class="future">
 
 <h2>Future Ideas</h2>
+<!-- ===================================================
+     FUTURE IDEAS SECTION - Numbered List
+     Bas is poore block ko apni website ke "Future Ideas"
+     section me jaha bhi list dikhani hai, wahan paste kar do.
+     =================================================== -->
 
-<div class="cards">
+<style>
+  .future-ideas-wrap {
+    background-color: #0d1520;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 40px 20px;
+  }
 
-<div class="card">
-<h3>AI Business</h3>
-<p>Next generation AI startups and automation ideas.</p>
+  .future-ideas-wrap h2.section-title {
+    color: #f5c518;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .idea-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .idea-card {
+    background-color: #131c2b;
+    border: 1px solid #24304a;
+    border-radius: 10px;
+    padding: 18px 20px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+
+  .idea-card:hover {
+    transform: translateY(-4px);
+    border-color: #f5c518;
+  }
+
+  .idea-number {
+    display: inline-block;
+    background-color: #f5c518;
+    color: #0d1520;
+    font-weight: bold;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+
+  .idea-card h3 {
+    color: #ffffff;
+    font-size: 1.05rem;
+    margin: 6px 0 8px 0;
+  }
+
+  .idea-card p {
+    color: #b8c1d1;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+  }
+</style>
+
+<div class="future-ideas-wrap">
+  <h2 class="section-title">Future Ideas</h2>
+  <div class="idea-grid" id="ideaGrid">
+    <!-- Cards get inserted here by JS from the array below -->
+  </div>
 </div>
 
-<div class="card">
-<h3>Tech Innovation</h3>
-<p>Future technology projects that can change the world.</p>
-</div>
+<script>
+  const futureIdeas = [
+    { title: "Dream Recording", desc: "Record dreams while sleeping, just like a video." },
+    { title: "Instant Language Brain Chip", desc: "Speak and understand any language instantly, without learning it." },
+    { title: "Teleportation of Humans", desc: "Travel from one place to another in seconds." },
+    { title: "Weather Control", desc: "Control rain, storms, or snowfall on demand." },
+    { title: "Age Reversal", desc: "Make a human body physically 25 years old again." },
+    { title: "Mind-to-Mind Communication", desc: "Communicate through thoughts, without speaking." },
+    { title: "Unlimited Clean Energy", desc: "Near-unlimited electricity via fusion or other clean sources." },
+    { title: "Artificial Gravity", desc: "Create Earth-like gravity on spacecraft or space stations." },
+    { title: "Human Hibernation", desc: "Sleep for months or years and wake up without harm." },
+    { title: "Real-Life Invisible Suit", desc: "A suit that makes a person invisible to the eye." },
+    { title: "Memory Backup", desc: "Save and restore brain memories on a computer." },
+    { title: "Robot Doctors", desc: "AI robots that can perform almost any surgery themselves." },
+    { title: "Underwater Cities", desc: "Build permanent smart cities beneath the ocean." },
+    { title: "Space Elevators", desc: "A lift from Earth to space, replacing rockets." },
+    { title: "Planet Terraforming", desc: "Make planets like Mars livable for humans." },
+    { title: "Flying Cars for Everyone", desc: "Affordable flying cars as everyday transport." },
+    { title: "3D-Printed Human Organs", desc: "Print human organs on demand for transplants." },
+    { title: "Digital Immortality", desc: "Upload the human mind to live on digitally." },
+    { title: "Self-Building Houses", desc: "Houses that construct themselves automatically." },
+    { title: "Disease-Fighting Nanobots", desc: "Tiny robots inside the body that destroy diseases." },
+    { title: "Asteroid Mining", desc: "Extract valuable resources from asteroids in space." },
+    { title: "Wireless Power Transmission", desc: "Send electricity worldwide without wires." },
+    { title: "AI Scientists", desc: "AI systems that make new inventions on their own." },
+    { title: "Personal Humanoid Robot Assistants", desc: "A robot assistant for every home and person." },
+    { title: "Real-Time Holographic Meetings", desc: "Hologram video calls without needing a VR headset." },
+    { title: "Universal Translator Implant", desc: "An ear chip that translates any language in real time." },
+    { title: "Emotion Reading AI", desc: "AI detects real emotions from face and voice." },
+    { title: "Self-Healing Materials", desc: "Buildings, roads, and phones that repair their own damage." },
+    { title: "Personal Force Field", desc: "An invisible shield around the body that prevents injury." },
+    { title: "Time-Delayed Messaging", desc: "Send a digital message today to future generations." },
+    { title: "Mass Ocean Desalination", desc: "Solve the global fresh water crisis using seawater." },
+    { title: "AI Judges for Fair Justice", desc: "Bias-free legal decisions with AI-assisted courts." },
+    { title: "Programmable Matter", desc: "Material that reshapes into any object on command." },
+    { title: "Zero-Gravity Recreation Parks", desc: "Controlled zero-gravity zones on Earth for fun." },
+    { title: "Universal Basic Robots", desc: "A free household robot for cooking and cleaning." },
+    { title: "DNA-Based Disease Prediction", desc: "Predict future diseases at birth for early prevention." },
+    { title: "Silent Communication Devices", desc: "Make calls via lip movement or throat vibration, no speaking." },
+    { title: "Global Instant Currency", desc: "One digital currency usable worldwide without conversion." }
+  ];
 
-<div class="card">
-<h3>Community Projects</h3>
-<p>Ideas submitted by our amazing community members.</p>
-</div>
-
-</div>
-
+  const grid = document.getElementById("ideaGrid");
+  futureIdeas.forEach((idea, i) => {
+    const card = document.createElement("div");
+    card.className = "idea-card";
+    card.innerHTML = `
+      <div class="idea-number">${i + 1}</div>
+      <h3>${idea.title}</h3>
+      <p>${idea.desc}</p>
+    `;
+    grid.appendChild(card);
+  });
+</script>
 </section>
 <section class="photo-slider-section">
 <h2 style="text-align:center; margin-bottom:20px;">Gallery</h2>
